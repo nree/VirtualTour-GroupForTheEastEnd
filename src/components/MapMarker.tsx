@@ -39,14 +39,14 @@ function MapMarker(props: Props) {
 
   const loc = locations.map((loc) => {
     let cls = "cursor-pointer"
-    let fill = "#f5a255"
+    let fill = "#f8c390"
     let outer = "#5da145"
     if (loc.id === props.selected) {
       outer = "#002f6c"
       cls = ""
     }
 
-    return (<motion.svg width="85px" height="85px" viewBox="-4 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" x={loc.location.x} y={loc.location.y} onClick={() => click(loc.id)} className={cls}
+    return (<motion.svg width="85px" height="85px" viewBox="-4 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" x={loc.location.x} y={loc.location.y} onClick={() => click(loc.id)} className={`flex-shrink-0 ${cls}`}
       key={loc.id}
       whileHover="hover"
       animate="rest">

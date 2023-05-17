@@ -7,12 +7,6 @@ type Props = {
   selected?: Location
 }
 
-const transition = {
-  //curve: [0.43, 0.15, 0.26, 0.97],
-  duration: 1.5,
-  //delay: 1
-}
-
 function MapHome(props: Props) {
   const popupVisible = !props.selected
   const animate = useAnimation()
@@ -20,7 +14,7 @@ function MapHome(props: Props) {
 
   const click = () => {
     animate.start({
-      viewBox: "0 0 5000 700",
+      viewBox: "0 0 3300 700",
       height: "15vh",
 
       transition: {

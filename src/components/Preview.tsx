@@ -32,7 +32,7 @@ function Preview(props: Props) {
   const select = useSelector((state: { previewReducer: PreviewState }) => state.previewReducer.select)
 
   const album = () => select?.album.map((a, idx) =>
-    <img key={idx + a} className="object-cover mb-1" src={`/assets/locations/${select?.id.replace('_Preserve', '')}/${a}`} />)
+    <img key={idx + a} className="object-cover mb-2 max-w-[90%] xl:max-w-[350px]" src={`./assets/locations/${select?.id.replace('_Preserve', '')}/${a}`} />)
 
   return (
     <AnimatePresence initial={false}>
@@ -49,7 +49,7 @@ function Preview(props: Props) {
             <img className="w-screen -z-50 h-[250px] object-cover drop-shadow-lg" src={select?.pic} />
           </motion.div>
 
-          <motion.div key={'body' + props.selected} className="p-5" variants={section}>
+          <motion.div key={'body' + props.selected} className="p-10" variants={section}>
             <div className="font-sans mb-5">
               {select?.body}
             </div>
@@ -59,8 +59,8 @@ function Preview(props: Props) {
             </NavLink>
           </motion.div>
 
-          <motion.div key={'album' + props.selected} className="m-5 mt-8" variants={section}>
-            <div className="grid grid-cols-3 gap-2">{album()}</div>
+          <motion.div key={'album' + props.selected} className="mt-10 mb-10" variants={section}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 justify-items-center place-items-center">{album()}</div>
           </motion.div>
 
         </motion.div>
